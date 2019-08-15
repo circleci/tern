@@ -11,7 +11,9 @@ executors:
 commands:
   setup:
     steps:
-      - run: sudo apt-get install -y attr
+      - run: |
+          ps aux | grep -i apt
+          sudo apt-get install -y attr
       - checkout
       - run: pyenv global 3.6.5
       - run: pip install --upgrade pip
