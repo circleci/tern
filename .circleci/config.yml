@@ -13,7 +13,7 @@ commands:
     steps:
       - run: |
           ps aux | grep -i apt
-          sudo apt-get install -y attr
+          sudo apt-get update && sudo apt-get install -y attr
       - checkout
       - run: pyenv global 3.6.5
       - run: pip install --upgrade pip
